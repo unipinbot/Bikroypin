@@ -264,7 +264,7 @@ def save_subscription_data():
 
 # Check if Subscription is Valid
 def is_subscription_valid():
-    if subscription_data["expiry_time"] is None: LA
+    if subscription_data["expiry_time"] is None: 
         return False
     try:
         expiry_time = datetime.strptime(subscription_data["expiry_time"], "%Y-%m-%d %H:%M:%S")
