@@ -25,7 +25,7 @@ import asyncio
 from flask import Flask, request, jsonify, redirect, url_for, abort
 from flask import Flask, request, jsonify, redirect, url_for, abort
 # MongoDB URL
-MONGO_URI = ""
+MONGO_URI = "mongodb+srv://unipinbot:unipinbot8199@cluster0.1hdsyba.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 mongo_client = MongoClient(MONGO_URI)
 db = mongo_client["bikroypin_db"]
 
@@ -228,13 +228,13 @@ def save_notification_message():
 load_notification_message()
 
 # Admin and Developer IDs
-ADMIN_ID = 8064614832
-DEVELOPER_ID = 6800514254
-BOT_PREFIX = "T"
+ADMIN_ID = 7819971284
+DEVELOPER_ID = 7819971284
+BOT_PREFIX = "!"
 # Telegram API Credentials
-api_id = 
-api_hash = ''
-phone_number = ''
+api_id = 26943177
+api_hash = '06a24075fc7f4201e71b8f827d85af03'
+phone_number = '+8801778432412'
 #subscribe
 BD_TIMEZONE = pytz.timezone("Asia/Dhaka")
 
