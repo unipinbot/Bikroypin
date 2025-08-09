@@ -25,7 +25,7 @@ import asyncio
 from flask import Flask, request, jsonify, redirect, url_for, abort
 from flask import Flask, request, jsonify, redirect, url_for, abort
 # MongoDB URL
-MONGO_URI = "database url"
+MONGO_URI = ""
 mongo_client = MongoClient(MONGO_URI)
 db = mongo_client["bikroypin_db"]
 
@@ -1691,7 +1691,7 @@ async def usd_add_baki_uc(event):
         qty = int(event.pattern_match.group(2))  # নেগেটিভ বা পজিটিভ সংখ্যা গ্রহণ করবে
 
         # Validate UC type
-        valid_uc_types = ['20', '36', '80', '160', '161', '162', '405', '800', '810', '1625', '2000']
+        valid_uc_types = ['20', '36', '80', '160', '161', '405', '800', '810', '1625', '2000']
         if uc_type not in valid_uc_types:
             await event.reply("➥ Invalid UC type!")
             return
@@ -1862,9 +1862,9 @@ async def limit_check_all(event):
     except Exception as e:
         await event.reply(f"❌ Error: {str(e)}")
 #mailload all thing
-ALLOWED_GROUP_ID = -1002256715924  # এখানে আপনার গ্রুপ আইডি দিন
+ALLOWED_GROUP_ID = -1002579212256  # এখানে আপনার গ্রুপ আইডি দিন
 
-@client.on(events.NewMessage(pattern='BIKROYPIN'))
+@client.on(events.NewMessage(pattern='UNIPINBOT'))
 async def bikroy_pin(event):
     # চেক করবে, মেসেজটি অনুমোদিত গ্রুপ থেকে এসেছে কিনা
     if event.chat_id != ALLOWED_GROUP_ID:
@@ -1872,10 +1872,11 @@ async def bikroy_pin(event):
 
     response = (
         "──────────────────────\n\n"
-        "𝗬𝗘𝗦..... 𝗜'𝗺 𝗮 𝗽𝗮𝗶𝗱 𝘂𝘀𝗲𝗿 🙋🏻‍♂️\n\n"
-        "𝐈 𝐚𝐥𝐬𝐨 𝐚𝐠𝐫𝐞𝐞 𝐰𝐢𝐭𝐡 𝐁𝐈𝐊𝐑𝐎𝐘𝐏𝐈𝐍\n"
-        "𝘁𝗲𝗿𝗺𝘀 𝗮𝗻𝗱 𝗰𝗼𝗻𝗱𝗶𝘁𝗶𝗼𝗻𝘀\n\n"
-        "──────────────────────"
+"𝗬𝗘𝗦..... 𝗜'𝗺 𝗮 𝗽𝗮𝗶𝗱 𝘂𝘀𝗲𝗿 🙋🏻‍♂️\n\n"
+"𝐈 𝐚𝐥𝐬𝐨 𝐚𝐠𝐫𝐞𝐞 𝐰𝐢𝐭𝐡 𝐔𝐍𝐈𝐏𝐈𝐍 𝐁𝐎𝐓\n"
+"𝘁𝗲𝗿𝗺𝘀 𝗮𝗻𝗱 𝗰𝗼𝗻𝗱𝗶𝘁𝗶𝗼𝗻𝘀\n\n"
+"──────────────────────"
+
     )
 
     await event.reply(response)
@@ -3297,9 +3298,9 @@ async def show_rates(event):
         "━━━━━━━━━━━━━━━\n"
         "☞︎︎︎ SM Payment ➪ +1.15%\n\n"
         "✦ 𝐎𝐫𝐝𝐞𝐫 𝐍𝐨𝐰:\n"
-        "[Website Link](https://tgsgameshopbd.com/)\n"
+
         "━━━━━━━━━━━━━━━\n"
-        "✦ 𝗣𝗿𝗼𝗱𝘂𝗰𝗲𝗱 𝗯𝘆  BIKROYPIN"
+        "✦ 𝗣𝗿𝗼𝗱𝘂𝗰𝗲𝗱 𝗯𝘆  𝐔𝐍𝐈𝐏𝐈𝐍 𝐁𝐎𝐓\n""
     )
 
     await event.reply(rates_message, parse_mode='md')
